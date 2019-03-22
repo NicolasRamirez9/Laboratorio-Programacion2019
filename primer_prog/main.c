@@ -16,6 +16,9 @@ int numerosYSacarPromedio(void)
     int numeros;
     int acumuladorDeNros = 0;
     int i;
+    int numMax;
+    int numMin;
+    int contador;
     float promedio;
 
     for(i=0;i<CANT_NROS_A_SOLICITAR;i++)
@@ -32,6 +35,7 @@ int numerosYSacarPromedio(void)
     else{
         printf("ERROR");
     }
+
     return 0;
 }
 
@@ -44,4 +48,23 @@ int calcularPromedio(int valorAcumulado, int cantidad, float *promedio)
         retorno = 0;
     }
     return retorno;
+}
+
+int calcularMaximoMinimo(int valorIngresado, int numMin, int numMax)
+{
+    int acumuladorNro = 0;
+    if (acumuladorNro == 0)
+    {
+        numMin = valorIngresado;
+        numMax = valorIngresado;
+    }
+    if (valorIngresado < numMin)
+    {
+        numMin = valorIngresado;
+    }
+    if (valorIngresado > numMax)
+    {
+        numMax = valorIngresado;
+    }
+    acumuladorNro ++;
 }
